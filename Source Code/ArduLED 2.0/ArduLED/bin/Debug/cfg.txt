@@ -1,0 +1,4 @@
+SERIALDEVICE;Main Device;COM9;1000000;C:\Users\Kristian\OneDrive\Programming\C#\Finished\_GitHub_\ArduLED\GitHub\Source Code\ArduLED\ArduLED\bin\Debug\Setups\Main Device.txt;46
+WIRELESSDEVICE;ESP Device;192.168.1.90;8888;C:\Users\kris7\OneDrive\Programming\C#\Finished\_GitHub_\ArduLED\GitHub\Source Code\ArduLED\ArduLED\bin\Debug\Setups\ESP Device.txt;5
+CHECKBOX;SettingsStartupAutoConnectAtStartupCheckbox;False
+CHECKBOX;SettingsStartupAutoSendSetupsAtStartupCheckbox;False
