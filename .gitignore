@@ -1,13 +1,13 @@
-Source Code/ArduLED 2.0/ArduLED/bin/64x/cfg.txt
-Source Code/ArduLED 2.0/ArduLED/bin/64x/Setups
-Source Code/ArduLED 2.0/ArduLED/bin/64x/ManualSaves
-Source Code/ArduLED 2.0/ArduLED/bin/64x/Ranges
-Source Code/ArduLED 2.0/ArduLED/bin/64x/DeviceConfigs
+Source Code/ArduLED 2.0/ArduLED/bin/Debug/cfg.txt
+Source Code/ArduLED 2.0/ArduLED/bin/Debug/Setups
+Source Code/ArduLED 2.0/ArduLED/bin/Debug/ManualSaves
+Source Code/ArduLED 2.0/ArduLED/bin/Debug/Ranges
+Source Code/ArduLED 2.0/ArduLED/bin/Debug/DeviceConfigs
 
-Source Code/ArduLED 2.0/ArduLED/bin/Release 64x/Setups
-Source Code/ArduLED 2.0/ArduLED/bin/Release 64x/ManualSaves
-Source Code/ArduLED 2.0/ArduLED/bin/Release 64x/Ranges
-Source Code/ArduLED 2.0/ArduLED/bin/Release 64x/DeviceConfigs
+Source Code/ArduLED 2.0/ArduLED/bin/Release/Setups
+Source Code/ArduLED 2.0/ArduLED/bin/Release/ManualSaves
+Source Code/ArduLED 2.0/ArduLED/bin/Release/Ranges
+Source Code/ArduLED 2.0/ArduLED/bin/Release/DeviceConfigs
 
 Source Code/ArduLED 2.0/.vs
 Source Code/ArduLED 2.0/ArduLED/obj
