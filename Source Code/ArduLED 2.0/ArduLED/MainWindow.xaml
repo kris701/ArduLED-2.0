@@ -7,13 +7,46 @@
         Title="ArduLED" Height="600" Width="820.5" Background="#FF2F3136" BorderThickness="0" LayoutUpdated="MainWindow1_LayoutUpdated" Icon="Resources/arduled_icon_v2.ico" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanResizeWithGrip" Loaded="MainWindow1_Loaded" Closing="MainWindow1_Closing">
 
     <Window.Resources>
-        <Style x:Key = "HoverStyleTopBar" TargetType = "Button">
-            <Setter Property = "Foreground" Value = "White" />
+        
+        <!--Standart Resouces-->
+
+        <FontFamily x:Key="StandartFont">Lucida Console</FontFamily>
+        <SolidColorBrush x:Key="ComboboxBackgroundColor" Color="#FF77787A" />
+        <SolidColorBrush x:Key="ComboboxArrowBoxBackgroundColor" Color="#FF454A53"/>
+
+        <!--Standart Styles-->
+
+        <Style TargetType="Label" x:Key="StandartLabelStyle">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="{StaticResource StandartFont}"/>
+        </Style>
+
+        <Style TargetType="CheckBox" x:Key="StandartCheckboxStyle">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="{StaticResource StandartFont}"/>
+        </Style>
+
+        <Style x:Key = "StandartTopButtonStyle" TargetType = "Button">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="FontFamily" Value="{StaticResource StandartFont}"/>
+            <Setter Property="Foreground" Value = "White" />
+            <Setter Property="BorderThickness" Value = "0" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="background">
-                            <ContentPresenter x:Name="ButtonContentPresenter" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Border x:Name="Background">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -25,13 +58,20 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key = "HoverStyleSideBar" TargetType = "Button">
+        
+        <Style x:Key = "StandartSidebarButtonStyle" TargetType = "Button">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="FontFamily" Value="{StaticResource StandartFont}"/>
             <Setter Property = "Foreground" Value = "White" />
+            <Setter Property="BorderThickness" Value = "0" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="background" Background="#FF1B212E">
-                            <ContentPresenter x:Name="ButtonContentPresenter" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+                        <Border x:Name="Background" Background="#FF1B212E">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -43,7 +83,13 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key = "HoverStyleSideBarCenterText" TargetType = "Button">
+
+        <Style x:Key = "StandartSidebarButtonStyleCenterText" TargetType = "Button">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="FontFamily" Value="{StaticResource StandartFont}"/>
             <Setter Property = "Foreground" Value = "White" />
             <Setter Property="Template">
                 <Setter.Value>
@@ -62,10 +108,6 @@
             </Setter>
         </Style>
 
-        <SolidColorBrush x:Key="ComboboxBackgroundColor" Color="#FF77787A" />
-
-        <SolidColorBrush x:Key="ComboboxArrowBoxBackgroundColor" Color="#FF454A53"/>
-
         <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="ToggleButton">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -78,8 +120,13 @@
             </Grid>
         </ControlTemplate>
 
-        <Style x:Key = "ComboboxStyle" TargetType = "ComboBox">
-            <Setter Property = "Foreground" Value = "White" />
+        <Style x:Key = "StandartComboboxStyle" TargetType = "ComboBox">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="FontFamily" Value="{StaticResource StandartFont}"/>
+            <Setter Property ="Foreground" Value = "White" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ComboBox">
@@ -100,7 +147,21 @@
             </Setter>
         </Style>
 
-        <Style x:Key = "TextboxStyle" TargetType = "TextBox">
+        <Style x:Key = "StandartTextboxStyle" TargetType = "TextBox">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property = "Foreground" Value = "White" />
+            <Setter Property = "Background" Value = "#FF77787A" />
+            <Setter Property = "BorderThickness" Value = "0" />
+        </Style>
+
+        <Style x:Key = "StandartTextboxStyleCenterText" TargetType = "TextBox">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
             <Setter Property = "Foreground" Value = "White" />
             <Setter Property = "Background" Value = "#FF77787A" />
             <Setter Property = "BorderThickness" Value = "0" />
@@ -121,33 +182,26 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid x:Name="TopBarDragGrid" Grid.Column="0" Grid.Row="0" Background="#FF202225" MouseDown="Grid_MouseDown" MouseMove="Window_MouseMove" MouseUp="Grid_MouseUp" Grid.ColumnSpan="4" MouseLeave="Grid_MouseLeave">
+        <Grid x:Name="TopBarDragGrid" Background="#FF202225" MouseDown="Grid_MouseDown" MouseMove="Window_MouseMove" MouseUp="Grid_MouseUp" Grid.ColumnSpan="4" MouseLeave="Grid_MouseLeave">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="45"/>
-                <ColumnDefinition Width="2*" />
-                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="175" />
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="45"/>
                 <ColumnDefinition Width="45"/>
                 <ColumnDefinition Width="45"/>
             </Grid.ColumnDefinitions>
             <Image x:Name="LogoImage" Grid.Column="0" HorizontalAlignment="Center" Margin="0,2,2,2" VerticalAlignment="Top" Source="Resources/arduled_icon_v2.ico"/>
-            <Label x:Name="TopLabel" Content="ArduLED" Grid.Column="1" HorizontalAlignment="Left" Margin="0,2,2,0" VerticalAlignment="Top" Foreground="#FFC5BABA" RenderTransformOrigin="0.518,0.564" FontSize="20"/>
-            <Button x:Name="ExitButton" Content="X" Grid.Column="5" HorizontalAlignment="Center" Width="35" Margin="0,5,0,5" FontSize="14" BorderThickness="0" Background="Red" Foreground="White" Click="ExitButton_Click"/>
-            <Button x:Name="MaximizeButton" Content="☐" Grid.Column="4" HorizontalAlignment="Center" Width="35" Margin="0,5,0,5" FontSize="14" BorderThickness="0" Background="#FF36393F" Foreground="White" Click="MaximizeButton_Click"/>
-            <Button x:Name="MinimizeButton" Content="_" Grid.Column="3" HorizontalAlignment="Center" Width="35" Margin="0,5,0,5" FontSize="14" BorderThickness="0" Background="#FF36393F" Foreground="White" Click="MinimizeButton_Click"/>
+            <Label x:Name="TopLabel" Content="ArduLED 2.0" Grid.Column="1" FontSize="20" Style="{StaticResource StandartLabelStyle}"/>
+            <Button x:Name="ExitButton" Content="X" Grid.Column="5" Width="35" Margin="5" FontSize="14" BorderThickness="0" Background="Red" Foreground="White" Click="ExitButton_Click"/>
+            <Button x:Name="MaximizeButton" Content="☐" Grid.Column="4" Width="35" Margin="5" FontSize="14" BorderThickness="0" Background="#FF36393F" Foreground="White" Click="MaximizeButton_Click"/>
+            <Button x:Name="MinimizeButton" Content="_" Grid.Column="3" Width="35" Margin="5" FontSize="14" BorderThickness="0" Background="#FF36393F" Foreground="White" Click="MinimizeButton_Click"/>
         </Grid>
 
-        <Grid Grid.Column="0" Grid.Row="1" Background="#FF202225" Grid.RowSpan="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-        </Grid>
+        <Rectangle Grid.Column="0" Grid.Row="1" Fill="#FF202225" Grid.RowSpan="2"/>
 
         <Grid Grid.Column="1" Grid.Row="1" Background="#FF2F3136" Grid.ColumnSpan="3" >
             <Grid.RowDefinitions>
@@ -160,10 +214,10 @@
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="ModesButton" Content="Modes" Grid.Column="0" Margin="10" HorizontalAlignment="Stretch" FontSize="14" BorderThickness="0" Style="{DynamicResource HoverStyleTopBar}" Click="ModesButton_Click" Tag="ModesButton"/>
-            <Button x:Name="SettingsButton" Content="Settings" Grid.Column="1" Margin="10" HorizontalAlignment="Stretch" FontSize="14" BorderThickness="0" Style="{DynamicResource HoverStyleTopBar}" Click="SettingsButton_Click" Tag="SettingsButton"/>
-            <Button x:Name="SetupButton" Content="Setup" Grid.Column="2" Margin="10" HorizontalAlignment="Stretch" FontSize="14" BorderThickness="0" Style="{DynamicResource HoverStyleTopBar}" Click="SetupButton_Click" Tag="SetupButton"/>
-            <Button x:Name="HelpButton" Content="Help" Grid.Column="3" Margin="10" HorizontalAlignment="Stretch" FontSize="14" BorderThickness="0" Style="{DynamicResource HoverStyleTopBar}" Click="HelpButton_Click" Tag="HelpButton"/>
+            <Button x:Name="ModesButton" Content="Modes" Grid.Column="0" Margin="10" FontSize="14" Style="{DynamicResource StandartTopButtonStyle}" Click="ModesButton_Click"/>
+            <Button x:Name="SettingsButton" Content="Settings" Grid.Column="1" Margin="10" FontSize="14" Style="{DynamicResource StandartTopButtonStyle}" Click="SettingsButton_Click"/>
+            <Button x:Name="SetupButton" Content="Setup" Grid.Column="2" Margin="10" FontSize="14" Style="{DynamicResource StandartTopButtonStyle}" Click="SetupButton_Click"/>
+            <Button x:Name="HelpButton" Content="Help" Grid.Column="3" Margin="10" FontSize="14" Style="{DynamicResource StandartTopButtonStyle}" Click="HelpButton_Click"/>
         </Grid>
 
         <Grid x:Name="ModesSideBar" Grid.Column="1" Grid.Row="2" Background="#FF2F3136">
@@ -185,20 +239,20 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="20"/>
             </Grid.ColumnDefinitions>
-            <ComboBox x:Name="ModesDeviceSelectionCombobox" SelectionChanged="ModesDeviceSelectionCombobox_SelectionChanged" DropDownOpened="ModeDeviceSelectionCombobox_DropDownOpened" Grid.Row="0" Grid.ColumnSpan="3" Margin="0,3,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" SelectedIndex="0" Style="{DynamicResource ComboboxStyle}"/>
-            <Button x:Name="ModesFadeingButton" Click="ModesFadeingButton_Click" Content="Fadeing" Grid.Row="1" Grid.ColumnSpan="3" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
-            <Button x:Name="ModesVisualizerButton" Click="ModesVisualizerButton_Click" Content="Visualizer" Grid.Row="2" Grid.ColumnSpan="3" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
-            <Button x:Name="ModesAmbilightButton" Click="ModesAmbilightButton_Click" Content="Ambilight" Grid.Row="3" Grid.ColumnSpan="3" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
-            <Button x:Name="ModesIndividualColorsButton" Click="ModesIndividualColorsButton_Click" Content="Individual Colors" Grid.Row="4" Grid.ColumnSpan="3" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
-            <Button x:Name="ModesInstructionsButton" Click="ModesInstructionsButton_Click" Content="Instructions" Grid.Row="5" Grid.ColumnSpan="3" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
-            <Button x:Name="ModesServerButton" Click="ModesServerButton_Click" Content="Server" Grid.Row="6" Grid.ColumnSpan="3" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
-            <Button x:Name="ModesAnimationButton" Click="ModesAnimationButton_Click" Content="Animation" Grid.Row="7" Grid.ColumnSpan="3" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
+            <ComboBox x:Name="ModesDeviceSelectionCombobox" Grid.Row="0" Grid.ColumnSpan="3" Margin="3" FontSize="12" SelectedIndex="0" Style="{DynamicResource StandartComboboxStyle}" SelectionChanged="ModesDeviceSelectionCombobox_SelectionChanged" DropDownOpened="ModeDeviceSelectionCombobox_DropDownOpened"/>
+            <Button x:Name="ModesFadeingButton" Grid.Row="1" Grid.ColumnSpan="3" Content="Fadeing" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="ModesFadeingButton_Click"/>
+            <Button x:Name="ModesVisualizerButton" Grid.Row="2" Grid.ColumnSpan="3" Content="Visualizer" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="ModesVisualizerButton_Click" />
+            <Button x:Name="ModesAmbilightButton" Grid.Row="3" Grid.ColumnSpan="3" Content="Ambilight" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="ModesAmbilightButton_Click" />
+            <Button x:Name="ModesIndividualColorsButton" Grid.Row="4" Grid.ColumnSpan="3" Content="Individual Colors" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="ModesIndividualColorsButton_Click"/>
+            <Button x:Name="ModesInstructionsButton" Grid.Row="5" Grid.ColumnSpan="3" Content="Instructions" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="ModesInstructionsButton_Click"/>
+            <Button x:Name="ModesServerButton" Grid.Row="6" Grid.ColumnSpan="3" Content="Server" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="ModesServerButton_Click"/>
+            <Button x:Name="ModesAnimationButton" Grid.Row="7" Grid.ColumnSpan="3" Content="Animation" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="ModesAnimationButton_Click"/>
 
-            <Label x:Name="FromToIDLabel" Content="From To ID" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,2,10,2" Grid.Row="8" Foreground="White" Grid.ColumnSpan="3"/>
-            <Label x:Name="FromToIDSliderToValue" Content="1" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" Margin="1,15,1,2" Grid.Row="9" Grid.Column="2" Foreground="White"/>
-            <Label x:Name="FromToIDSliderFromValue" Content="0" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="1,0,1,2" Grid.Row="9" Grid.Column="0" Foreground="White"/>
-            <Slider x:Name="FromToIDSliderFrom" ValueChanged="FromToIDSliderFrom_ValueChanged" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="9" Grid.Column="1" Minimum="0" Maximum="1" SmallChange="1" TickFrequency="1" TickPlacement="BottomRight" Value="0" LargeChange="5" PreviewMouseUp="FadingFromToIDSliderFrom_MouseUp" Uid="Setting" />
-            <Slider x:Name="FromToIDSliderTo" ValueChanged="FromToIDSliderTo_ValueChanged" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Row="9" Grid.Column="1" Minimum="0" Maximum="1" SmallChange="1" TickFrequency="1" TickPlacement="TopLeft" Value="1" LargeChange="5" PreviewMouseUp="FadingFromToIDSliderFrom_MouseUp" Uid="Setting" />
+            <Label x:Name="FromToIDLabel" Grid.Column="1" Grid.Row="8" Content="From To ID" Style="{StaticResource StandartLabelStyle}"/>
+            <Label x:Name="FromToIDSliderToValue" Grid.Row="9" Grid.Column="2" Content="1" FontSize="8" VerticalAlignment="Bottom" Style="{StaticResource StandartLabelStyle}"/>
+            <Label x:Name="FromToIDSliderFromValue" Grid.Row="9" Grid.Column="0" Content="0" FontSize="8" VerticalAlignment="Top" Style="{StaticResource StandartLabelStyle}"/>
+            <Slider x:Name="FromToIDSliderFrom" Grid.Row="9" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" Minimum="0" Maximum="1" SmallChange="1" TickFrequency="1" TickPlacement="BottomRight" Value="0" LargeChange="5" Uid="Setting" PreviewMouseUp="FromToIDSliderFrom_MouseUp" ValueChanged="FromToIDSliderFrom_ValueChanged"/>
+            <Slider x:Name="FromToIDSliderTo" Grid.Row="9" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Minimum="0" Maximum="1" SmallChange="1" TickFrequency="1" TickPlacement="TopLeft" Value="1" LargeChange="5" Uid="Setting" PreviewMouseUp="FromToIDSliderFrom_MouseUp" ValueChanged="FromToIDSliderTo_ValueChanged"/>
 
         </Grid>
 
@@ -216,9 +270,9 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="SettingsSideBarConnectionButton" Click="SettingsSideBarConnectionButton_Click" Content="Connection" Grid.Row="0" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
-            <Button x:Name="SettingsSideBarStartupButton" Click="SettingsSideBarStartupButton_Click" Content="Startup" Grid.Row="1" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
-            <Button x:Name="SettingsSideBarOtherButton" Click="SettingsSideBarOtherButton_Click" Content="Other" Grid.Row="2" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
+            <Button x:Name="SettingsSideBarConnectionButton" Grid.Row="0" Content="Connection" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="SettingsSideBarConnectionButton_Click" />
+            <Button x:Name="SettingsSideBarStartupButton" Grid.Row="1" Content="Startup" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="SettingsSideBarStartupButton_Click"/>
+            <Button x:Name="SettingsSideBarOtherButton" Grid.Row="2" Content="Other" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="SettingsSideBarOtherButton_Click"/>
         </Grid>
 
         <Grid x:Name="SetupSideBar" Grid.Column="1" Grid.Row="2" Background="#FF2F3136" d:IsHidden="True">
@@ -235,12 +289,12 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <ComboBox x:Name="DeviceSelectionCombobox" SelectionChanged="DeviceSelectionCombobox_SelectionChanged" DropDownOpened="DeviceSelectionCombobox_DropDownOpened" Grid.Row="0" Margin="0,3,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" SelectedIndex="0" Style="{DynamicResource ComboboxStyle}"/>
-            <Button x:Name="SetupSideBarAddStripButton" Click="SetupSideBarAddStripButton_Click" Content="Add Strip" Grid.Row="1" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
-            <Button x:Name="SetupSideBarSaveButton" Click="SetupSideBarSaveButton_Click" Content="Save Setup" Grid.Row="2" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
-            <Button x:Name="SetupSideBarLoadButton" Click="SetupSideBarLoadButton_Click" Content="Load a Setup" Grid.Row="3" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
-            <Button x:Name="SetupSideBarSendButton" Click="SetupSideBarSendButton_Click" Content="Send Setup to device" Grid.Row="4" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
-            <ProgressBar x:Name="SetupSideBarTransferSetupProgressBar" Margin="0,5,10,5" HorizontalAlignment="Stretch" Grid.Row="5"/>
+            <ComboBox x:Name="DeviceSelectionCombobox" Grid.Row="0" FontSize="12" SelectedIndex="0" Style="{DynamicResource StandartComboboxStyle}" SelectionChanged="DeviceSelectionCombobox_SelectionChanged" DropDownOpened="DeviceSelectionCombobox_DropDownOpened"/>
+            <Button x:Name="SetupSideBarAddStripButton" Grid.Row="1" Content="Add Strip" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="SetupSideBarAddStripButton_Click"/>
+            <Button x:Name="SetupSideBarSaveButton" Grid.Row="2" Content="Save Setup" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="SetupSideBarSaveButton_Click"/>
+            <Button x:Name="SetupSideBarLoadButton" Grid.Row="3"  Content="Load a Setup" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="SetupSideBarLoadButton_Click"/>
+            <Button x:Name="SetupSideBarSendButton" Grid.Row="4" Content="Send Setup to device" Margin="0,2,10,2" FontSize="10" Style="{DynamicResource StandartSidebarButtonStyle}" Click="SetupSideBarSendButton_Click"/>
+            <ProgressBar x:Name="SetupSideBarTransferSetupProgressBar" Grid.Row="5" Margin="0,5,10,5"/>
         </Grid>
 
         <Grid x:Name="HelpSideBar" Grid.Column="1" Grid.Row="2" Background="#FF2F3136" d:IsHidden="True">
@@ -248,31 +302,21 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="30"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="HelpSideBarWikiButton" Click="HelpSideBarWikiButton_Click" Content="ArduLED Wiki" Grid.Row="0" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
-            <Button x:Name="HelpSideBarForumButton" Click="HelpSideBarForumButton_Click" Content="Forum" Grid.Row="1" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
-            <Button x:Name="HelpSideBarContactButton" Click="HelpSideBarContactButton_Click" Content="Contact" Grid.Row="2" Margin="0,2,10,2" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
+            <Button x:Name="HelpSideBarWikiButton" Grid.Row="0" Content="ArduLED Wiki" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="HelpSideBarWikiButton_Click"/>
+            <Button x:Name="HelpSideBarForumButton" Grid.Row="1" Content="Forum" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="HelpSideBarForumButton_Click"/>
+            <Button x:Name="HelpSideBarContactButton" Grid.Row="2" Content="Contact" Margin="0,2,10,2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyle}" Click="HelpSideBarContactButton_Click"/>
         </Grid>
 
-        <Grid x:Name="WelcomeGrid" Grid.Column="2" Grid.Row="2" Background="#FF36393F" Grid.ColumnSpan="2" d:IsHidden="True">
-            <Label x:Name="WelcomeLabel" Content="Welcome to ArduLED!" HorizontalAlignment="Center" VerticalAlignment="Center" Height="77" Width="478" FontSize="48" Foreground="White"/>
+        <Grid x:Name="WelcomeGrid" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Background="#FF36393F">
+            <Label x:Name="WelcomeLabel" Content="Welcome to ArduLED!" FontSize="48" Style="{StaticResource StandartLabelStyle}"/>
         </Grid>
 
-        <Grid x:Name="SetupGrid" Grid.Column="2" Grid.Row="2" Background="#FF36393F" Grid.ColumnSpan="2" d:IsHidden="True">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
+        <Grid x:Name="SetupGrid" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Background="#FF36393F" d:IsHidden="True">
             <Grid x:Name="InnerSetupPanel" Background="LightGray" Grid.Column="0" Grid.Row="0" Margin="10,10,10,10" MouseUp="SetupGrid_MouseUp" MouseMove="SetupGrid_MouseMove"/>
         </Grid>
 
@@ -283,7 +327,7 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
-                <RowDefinition Height="40"/>
+                <RowDefinition Height="30"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -294,27 +338,27 @@
                 <ColumnDefinition Width="30"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Rectangle x:Name="FadingColorRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="3" Grid.ColumnSpan="2" Margin="10,10,10,10" Fill="White"/>
-            <Image x:Name="FadingGridColorWheelImage" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Margin="10,10,10,10" Source="Resources/color_wheel.png" Grid.ColumnSpan="3" MouseDown="FadingGridColorWheelPointer_MouseDown" MouseMove="FadingGridColorWheelPointer_MouseMove" MouseUp="FadingGridColorWheelPointer_MouseUp"/>
-            <Ellipse x:Name="FadingGridColorWheelPointer" Width="5" Height="5" StrokeThickness="1" Stroke="Black" Grid.ColumnSpan="3" MouseDown="FadingGridColorWheelPointer_MouseDown" MouseMove="FadingGridColorWheelPointer_MouseMove" MouseUp="FadingGridColorWheelPointer_MouseUp" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="107.5,107.5,0,0"/>
-            <Label x:Name="FadingRGBColorCodeLabel" Content="RGB Color: 255, 255, 255" FontSize="8" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,2,10,2" Grid.Row="1" Foreground="White" Grid.ColumnSpan="3"/>
+            <Rectangle x:Name="FadingColorRectangle" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" Fill="White"/>
+            <Image x:Name="FadingGridColorWheelImage" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,10,10" Width="200" Height="200" Source="Resources/color_wheel.png" MouseDown="FadingGridColorWheelPointer_MouseDown" MouseMove="FadingGridColorWheelPointer_MouseMove" MouseUp="FadingGridColorWheelPointer_MouseUp"/>
+            <Ellipse x:Name="FadingGridColorWheelPointer" Grid.ColumnSpan="3" Width="5" Height="5" StrokeThickness="1" Stroke="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="107.5,107.5,0,0" MouseDown="FadingGridColorWheelPointer_MouseDown" MouseMove="FadingGridColorWheelPointer_MouseMove" MouseUp="FadingGridColorWheelPointer_MouseUp"/>
+            <Label x:Name="FadingRGBColorCodeLabel" Grid.Row="1" Grid.ColumnSpan="3" Content="RGB Color: 255, 255, 255" FontSize="8" Style="{StaticResource StandartLabelStyle}"/>
 
-            <Label x:Name="FadingGammaCorrectionLabel" Content="Gamma Correction" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,2,10,2" Grid.Row="2" Foreground="White" Grid.ColumnSpan="3"/>
-            <Label x:Name="FadingGammaCorrectionSliderValueLabel" Content="1" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="1,2,1,2" Grid.Row="3" Grid.Column="2" Foreground="White"/>
-            <Slider x:Name="FadingGammaCorrectionSlider" ValueChanged="FadingGammaCorrectionSlider_ValueChanged" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,2,0,2" Grid.Row="3" Grid.ColumnSpan="2" Minimum="0.01" Maximum="3" SmallChange="0.05" TickFrequency="0.1" TickPlacement="BottomRight" Value="1" LargeChange="0.5" Uid="Setting" />
+            <Label x:Name="FadingGammaCorrectionLabel" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Content="Gamma Correction" Style="{StaticResource StandartLabelStyle}" Uid="VisualAdvancedSetting"/>
+            <Label x:Name="FadingGammaCorrectionSliderValueLabel" Grid.Row="3" Grid.Column="2" Content="1" FontSize="8" Style="{StaticResource StandartLabelStyle}" Uid="VisualAdvancedSetting"/>
+            <Slider x:Name="FadingGammaCorrectionSlider" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Minimum="0.01" Maximum="3" SmallChange="0.05" TickFrequency="0.1" TickPlacement="BottomRight" Value="1" LargeChange="0.5" Uid="AdvancedSetting" ValueChanged="FadingGammaCorrectionSlider_ValueChanged"/>
 
-            <Label x:Name="FadingGammaSpeedSettingsLabel" Content="Speed Settings" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,0,0,0" Grid.Row="1" Foreground="White" Grid.ColumnSpan="2" Grid.Column="3" HorizontalContentAlignment="Center"/>
+            <Label x:Name="FadingGammaSpeedSettingsLabel" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="3" Content="Speed Settings" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
 
-            <Label x:Name="FadingFadeSpeedLabel" Content="Fade Speed" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,2,10,2" Grid.Row="2" Foreground="White" Grid.ColumnSpan="2" Grid.Column="3"/>
-            <Label x:Name="FadingFadeSpeedSliderValueLabel" Content="10" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="1,2,1,2" Grid.Row="3" Grid.Column="4" Foreground="White"/>
-            <Slider x:Name="FadingFadeSpeedSlider" ValueChanged="FadingFadeSpeedSlider_ValueChanged" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,2,0,2" Grid.Row="3" Grid.Column="3" Minimum="1" Maximum="150" SmallChange="1" TickFrequency="5" TickPlacement="BottomRight" Value="10" LargeChange="10" Uid="Setting" />
+            <Label x:Name="FadingFadeSpeedLabel" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="3" Content="Fade Speed" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+            <Label x:Name="FadingFadeSpeedSliderValueLabel" Grid.Row="3" Grid.Column="4" Content="10" FontSize="8" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+            <Slider x:Name="FadingFadeSpeedSlider" Grid.Row="3" Grid.Column="3" Minimum="1" Maximum="150" SmallChange="1" TickFrequency="5" TickPlacement="BottomRight" Value="10" LargeChange="10" Uid="AdvancedSetting" ValueChanged="FadingFadeSpeedSlider_ValueChanged"/>
 
-            <Label x:Name="FadeingFadeFactorLabel" Content="Fade Factor" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,2,10,2" Grid.Row="4" Grid.Column="3" Foreground="White" Grid.ColumnSpan="2"/>
-            <Label x:Name="FadeingFadeFactorSliderValueLabel" Content="0.1" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="1,2,1,2" Grid.Row="5" Grid.Column="4" Foreground="White"/>
-            <Slider x:Name="FadeingFadeFactorSlider" ValueChanged="FadeingFadeFactorSlider_ValueChanged" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,2,0,2" Grid.Row="5" Grid.Column="3" Minimum="0.01" Maximum="1" SmallChange="0.05" TickFrequency="0.1" TickPlacement="BottomRight" Value="0.1" LargeChange="0.25" Uid="Setting" />
+            <Label x:Name="FadeingFadeFactorLabel" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Content="Fade Factor" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+            <Label x:Name="FadeingFadeFactorSliderValueLabel" Grid.Row="5" Grid.Column="4" Content="0.1" FontSize="8" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+            <Slider x:Name="FadeingFadeFactorSlider" Grid.Row="5" Grid.Column="3" Minimum="0.01" Maximum="1" SmallChange="0.05" TickFrequency="0.1" TickPlacement="BottomRight" Value="0.1" LargeChange="0.25" Uid="AdvancedSetting" ValueChanged="FadeingFadeFactorSlider_ValueChanged"/>
         </Grid>
 
-        <Grid x:Name="VisualizerGrid" Grid.Column="2" Grid.Row="2" Background="#FF36393F" Grid.ColumnSpan="2" d:IsHidden="True">
+        <Grid x:Name="VisualizerGrid" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Background="#FF36393F" d:IsHidden="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
@@ -333,36 +377,34 @@
                 <ColumnDefinition Width="30"/>
                 <ColumnDefinition Width="160"/>
                 <ColumnDefinition Width="30"/>
-                <ColumnDefinition Width="30"/>
-                <ColumnDefinition Width="160"/>
-                <ColumnDefinition Width="55"/>
+                <ColumnDefinition Width="235"/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="VisualizerSelectDeviceLabel" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Content="Select Audio Device" FontSize="12" HorizontalAlignment="Stretch" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="1,2,1,2" Foreground="White"/>
-            <ComboBox x:Name="VisualizerSelectDeviceCombobox" Grid.Row="1" Grid.ColumnSpan="4" Margin="3,3,3,3" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" SelectedIndex="0" Uid="Setting" Style="{DynamicResource ComboboxStyle}"/>
+            <Label x:Name="VisualizerSelectDeviceLabel" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Content="Select Audio Device" FontSize="12" Style="{StaticResource StandartLabelStyle}"/>
+            <ComboBox x:Name="VisualizerSelectDeviceCombobox" Grid.Row="1" Grid.ColumnSpan="4" Margin="3" FontSize="12" SelectedIndex="0" Uid="Setting" Style="{DynamicResource StandartComboboxStyle}"/>
 
-            <Label x:Name="VisualizerSelectVisualizationTypeLabel" Grid.Row="2" Grid.Column="0" Content="Visualization Type" FontSize="12" HorizontalAlignment="Stretch" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="1,2,1,2" Foreground="White"/>
-            <ComboBox x:Name="VisualizerSelectVisualizationTypeCombobox" Grid.Row="3" SelectionChanged="VisualizerSelectVisualizationTypeCombobox_SelectionChanged" Margin="3,3,3,3" HorizontalAlignment="Stretch" FontSize="12" BorderThickness="0" SelectedIndex="0" Uid="Setting" Style="{DynamicResource ComboboxStyle}"/>
+            <Label x:Name="VisualizerSelectVisualizationTypeLabel" Grid.Row="2" Grid.Column="0" Content="Visualization Type" FontSize="12" Style="{StaticResource StandartLabelStyle}"/>
+            <ComboBox x:Name="VisualizerSelectVisualizationTypeCombobox" Grid.Row="3" Margin="3,3,3,3" FontSize="12" SelectedIndex="0" Uid="Setting" Style="{DynamicResource StandartComboboxStyle}" SelectionChanged="VisualizerSelectVisualizationTypeCombobox_SelectionChanged"/>
 
-            <Label x:Name="VisualizerVisualSamplesLabel" Content="Audio Samples" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="3,3,3,3" Grid.Row="4" Grid.Column="2" Foreground="White" />
-            <Label x:Name="VisualizerVisualSamplesValueLabel" Content="128" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="1,2,1,2" Grid.Row="5" Grid.Column="3" Foreground="White"/>
-            <Slider x:Name="VisualizerVisualSamplesSlider" ValueChanged="VisualizerVisualSamplesSlider_ValueChanged" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="3,3,0,3" Grid.Row="5" Grid.Column="2" Minimum="1" SmallChange="1" TickPlacement="BottomRight" Value="128" LargeChange="5" Maximum="255" TickFrequency="5" Uid="Setting" />
-            
-            <Label x:Name="VisualizerSensitivityLabel" Content="Sensitivity" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="3,3,3,3" Grid.Row="4" Grid.Column="0" Foreground="White" />
-            <Label x:Name="VisualizerSensitivityValueLabel" Content="3" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Top" HorizontalContentAlignment="Left" Margin="1,2,1,2" Grid.Row="5" Grid.Column="1" Foreground="White"/>
-            <Slider x:Name="VisualizerSensitivitySlider" ValueChanged="VisualizerSensitivitySlider_ValueChanged" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="3,3,0,3" Grid.Row="5" Grid.Column="0" Minimum="1" SmallChange="1" TickPlacement="BottomRight" Value="3" LargeChange="5" Uid="Setting" />
+            <Label x:Name="VisualizerVisualSamplesLabel" Grid.Row="4" Grid.Column="2" Content="Audio Samples" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+            <Label x:Name="VisualizerVisualSamplesValueLabel" Grid.Row="5" Grid.Column="3" Content="128" FontSize="8" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+            <Slider x:Name="VisualizerVisualSamplesSlider" Grid.Row="5" Grid.Column="2" Minimum="1" SmallChange="1" TickPlacement="BottomRight" Value="128" LargeChange="5" Maximum="255" TickFrequency="5" Uid="AdvancedSetting" ValueChanged="VisualizerVisualSamplesSlider_ValueChanged"/>
 
-            <Label x:Name="VisualizerSmoothnessLabel" Content="Smoothness" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="3,3,3,3" Grid.Row="6" Grid.Column="2" Foreground="White"/>
-            <Label x:Name="VisualizerSmoothnessValueLabel" Content="1" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="1,2,1,2" Grid.Row="7" Grid.Column="3" Foreground="White"/>
-            <Slider x:Name="VisualizerSmoothnessSlider" ValueChanged="VisualizerSmoothnessSlider_ValueChanged" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="3,3,0,3" Grid.Row="7" Grid.Column="2" Minimum="1" SmallChange="1" TickPlacement="BottomRight" Value="1" LargeChange="5" Uid="Setting" />
+            <Label x:Name="VisualizerSensitivityLabel" Grid.Row="4" Grid.Column="0" Content="Sensitivity" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+            <Label x:Name="VisualizerSensitivityValueLabel" Grid.Row="5" Grid.Column="1" Content="3" FontSize="8" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+            <Slider x:Name="VisualizerSensitivitySlider" Grid.Row="5" Grid.Column="0" Minimum="1" SmallChange="1" TickPlacement="BottomRight" Value="3" LargeChange="5" Uid="AdvancedSetting" ValueChanged="VisualizerSensitivitySlider_ValueChanged"/>
 
-            <Label x:Name="VisualizerSampleDelayLabel" Content="Sample Delay" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="3,3,3,3" Grid.Row="6" Grid.Column="0" Foreground="White"/>
-            <Label x:Name="VisualizerSampleDelayValueLabel" Content="10" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="1,2,1,2" Grid.Row="7" Grid.Column="1" Foreground="White"/>
-            <Slider x:Name="VisualizerSampleDelaySlider" ValueChanged="VisualizerSampleDelaySlider_ValueChanged" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="3,3,0,3" Grid.Row="7" Grid.Column="0" SmallChange="1" TickPlacement="BottomRight" Value="10" LargeChange="5" Maximum="100" TickFrequency="5" Uid="Setting" />
+            <Label x:Name="VisualizerSmoothnessLabel" Grid.Row="6" Grid.Column="2" Content="Smoothness" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+            <Label x:Name="VisualizerSmoothnessValueLabel" Grid.Row="7" Grid.Column="3" Content="1" FontSize="8" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+            <Slider x:Name="VisualizerSmoothnessSlider" Grid.Row="7" Grid.Column="2" Minimum="1" SmallChange="1" TickPlacement="BottomRight" Value="1" LargeChange="5" Uid="AdvancedSetting" ValueChanged="VisualizerSmoothnessSlider_ValueChanged"/>
 
-            <Button x:Name="VisualizerStartButton" Click="VisualizerStartButton_Click" Content="Start/Update Visualizer" Grid.Row="9" Grid.Column="0" Margin="2,2,2,2" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
-            <Button x:Name="VisualizerStopButton" Click="VisualizerStopButton_Click" Content="Stop Visualizer" Grid.Row="9" Grid.Column="2" Margin="2,2,2,2" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="12" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
+            <Label x:Name="VisualizerSampleDelayLabel" Grid.Row="6" Grid.Column="0" Content="Sample Delay" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+            <Label x:Name="VisualizerSampleDelayValueLabel" Grid.Row="7" Grid.Column="1" Content="10" FontSize="8" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+            <Slider x:Name="VisualizerSampleDelaySlider" Grid.Row="7" Grid.Column="0" SmallChange="1" TickPlacement="BottomRight" Value="10" LargeChange="5" Maximum="100" TickFrequency="5" Uid="AdvancedSetting" ValueChanged="VisualizerSampleDelaySlider_ValueChanged"/>
 
-            <Grid x:Name="VisualizerSpectrumSettingsGrid" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="8" Background="#FF414449" Margin="3,3,5,3" Visibility="Hidden">
+            <Button x:Name="VisualizerStartButton" Grid.Row="9" Grid.Column="0" Content="Start/Update Visualizer" Margin="2" FontSize="10" Style="{DynamicResource StandartSidebarButtonStyle}" Click="VisualizerStartButton_Click"/>
+            <Button x:Name="VisualizerStopButton" Grid.Row="9" Grid.Column="2" Content="Stop Visualizer" Margin="2" FontSize="10" Style="{DynamicResource StandartSidebarButtonStyle}" Click="VisualizerStopButton_Click"/>
+
+            <Grid x:Name="VisualizerSpectrumSettingsGrid" Grid.Column="4" Grid.Row="0" Grid.RowSpan="8" Background="#FF414449" Margin="3" Visibility="Hidden">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25"/>
                     <RowDefinition Height="110"/>
@@ -378,26 +420,26 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label x:Name="VisualizerSpectrumTopLabel" FontSize="10" Content="Spectrum Wave/Beat Settings" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Foreground="White" />
-                <Canvas x:Name="VisualizerSpectrumCanvas" Grid.Row="1" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Background="#FF666262" Margin="2,2,2,2" Width="233" Height="106"/>
-                <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="#FF1B212E" Margin="1,1,1,1"/>
+                <Label x:Name="VisualizerSpectrumTopLabel" Grid.ColumnSpan="2" Content="Spectrum Wave/Beat Settings" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <Canvas x:Name="VisualizerSpectrumCanvas" Grid.Row="1" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Background="#FF666262" Margin="2" Width="226" Height="106"/>
+                <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="#FF1B212E" Margin="1"/>
 
-                <CheckBox x:Name="VisualizerSpectrumAutoscaleValuesCheckbox" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Content="Autoscale Values" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" IsChecked="True"/>
+                <CheckBox x:Name="VisualizerSpectrumAutoscaleValuesCheckbox" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Content="Autoscale Values" FontSize="8" IsChecked="True" Style="{StaticResource StandartCheckboxStyle}"/>
 
-                <Label x:Name="VisualizerSpectrumRedLabel" Grid.Row="3" Grid.Column="0" FontSize="8" Content="Red:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Foreground="White" />
-                <TextBox x:Name="VisualizerSpectrumRedTextbox" Text="x*1" Grid.Row="3" Grid.Column="1" FontSize="10" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="IBeam" Style="{DynamicResource TextboxStyle}"/>
+                <Label x:Name="VisualizerSpectrumRedLabel" Grid.Row="3" Grid.Column="0" FontSize="8" Content="Red:" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="VisualizerSpectrumRedTextbox" Grid.Row="3" Grid.Column="1" Text="x*1" FontSize="10" Margin="3" Cursor="IBeam" Style="{DynamicResource StandartTextboxStyle}"/>
 
-                <Label x:Name="VisualizerSpectrumGreenLabel" Grid.Row="4" Grid.Column="0" FontSize="8" Content="Green:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Foreground="White" />
-                <TextBox x:Name="VisualizerSpectrumGreenTextbox" Text="x*2" Grid.Row="4" Grid.Column="1" FontSize="10" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="IBeam" Style="{DynamicResource TextboxStyle}"/>
+                <Label x:Name="VisualizerSpectrumGreenLabel" Grid.Row="4" Grid.Column="0" FontSize="8" Content="Green:" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="VisualizerSpectrumGreenTextbox" Grid.Row="4" Grid.Column="1" Text="x*2" FontSize="10" Margin="3" Cursor="IBeam" Style="{DynamicResource StandartTextboxStyle}"/>
 
-                <Label x:Name="VisualizerSpectrumBlueLabel" Grid.Row="5" Grid.Column="0" FontSize="8" Content="Blue:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Foreground="White" />
-                <TextBox x:Name="VisualizerSpectrumBlueTextbox" Text="x*3" Grid.Row="5" Grid.Column="1" FontSize="10" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="IBeam" Style="{DynamicResource TextboxStyle}"/>
+                <Label x:Name="VisualizerSpectrumBlueLabel" Grid.Row="5" Grid.Column="0" FontSize="8" Content="Blue:" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="VisualizerSpectrumBlueTextbox" Grid.Row="5" Grid.Column="1" Text="x*3" FontSize="10" Margin="3" Cursor="IBeam" Style="{DynamicResource StandartTextboxStyle}"/>
 
-                <Button x:Name="VisualizerSpectrumUpdateButton" Click="VisualizerSpectrumUpdateButton_Click" Content="Update Spectrum" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="2,2,2,2" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="8" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
+                <Button x:Name="VisualizerSpectrumUpdateButton" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="Update Spectrum" Margin="2" FontSize="8" Style="{DynamicResource StandartSidebarButtonStyle}" Click="VisualizerSpectrumUpdateButton_Click"/>
 
             </Grid>
 
-            <Grid x:Name="VisualizerBeatWaveSettingsGrid" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="8" Background="#FF414449" Margin="3,3,5,3" Visibility="Hidden">
+            <Grid x:Name="VisualizerBeatWaveSettingsGrid" Grid.Column="4" Grid.Row="0" Grid.RowSpan="8" Background="#FF414449" Margin="3" Visibility="Hidden">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25"/>
                     <RowDefinition Height="110"/>
@@ -413,26 +455,26 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label x:Name="VisualizerBeatWaveTopLabel" FontSize="10" Content="Beat Wave Settings" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Foreground="White" />
-                <Canvas x:Name="VisualizerBeatWaveCanvas" Grid.Row="1" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Background="#FF666262" Margin="2,2,2,2" Width="233" Height="106"/>
-                <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="#FF1B212E" Margin="1,1,1,1"/>
+                <Label x:Name="VisualizerBeatWaveTopLabel" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Beat Wave Settings" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <Canvas x:Name="VisualizerBeatWaveCanvas" Grid.Row="1" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Background="#FF666262" Margin="2"  Width="226" Height="106"/>
+                <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="#FF1B212E" Margin="1"/>
 
-                <CheckBox x:Name="VisualizerBeatWaveAutoscaleValuesCheckbox" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Content="Autoscale Values" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" IsChecked="True"/>
+                <CheckBox x:Name="VisualizerBeatWaveAutoscaleValuesCheckbox" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Content="Autoscale Values" FontSize="8" IsChecked="True" Style="{StaticResource StandartCheckboxStyle}"/>
 
-                <Label x:Name="VisualizerBeatWaveRedLabel" Grid.Row="3" Grid.Column="0" FontSize="8" Content="Red:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Foreground="White" />
-                <TextBox x:Name="VisualizerBeatWaveRedTextbox" Text="x*1" Grid.Row="3" Grid.Column="1" FontSize="10" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="IBeam" Style="{DynamicResource TextboxStyle}"/>
+                <Label x:Name="VisualizerBeatWaveRedLabel" Grid.Row="3" Grid.Column="0" FontSize="8" Content="Red:" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="VisualizerBeatWaveRedTextbox" Text="x*1" Grid.Row="3" Grid.Column="1" FontSize="10" Margin="3" Cursor="IBeam" Style="{DynamicResource StandartTextboxStyle}"/>
 
-                <Label x:Name="VisualizerBeatWaveGreenLabel" Grid.Row="4" Grid.Column="0" FontSize="8" Content="Green:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Foreground="White" />
-                <TextBox x:Name="VisualizerBeatWaveGreenTextbox" Text="x*1 - 255" Grid.Row="4" Grid.Column="1" FontSize="10" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="IBeam" Style="{DynamicResource TextboxStyle}"/>
+                <Label x:Name="VisualizerBeatWaveGreenLabel" Grid.Row="4" Grid.Column="0" FontSize="8" Content="Green:" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="VisualizerBeatWaveGreenTextbox" Text="x*1 - 255" Grid.Row="4" Grid.Column="1" FontSize="10" Margin="3" Cursor="IBeam" Style="{DynamicResource StandartTextboxStyle}"/>
 
-                <Label x:Name="VisualizerBeatWaveBlueLabel" Grid.Row="5" Grid.Column="0" FontSize="8" Content="Blue:" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Foreground="White" />
-                <TextBox x:Name="VisualizerBeatWaveBlueTextbox" Text="x*1 - 510" Grid.Row="5" Grid.Column="1" FontSize="10" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="IBeam" Style="{DynamicResource TextboxStyle}"/>
+                <Label x:Name="VisualizerBeatWaveBlueLabel" Grid.Row="5" Grid.Column="0" FontSize="8" Content="Blue:" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="VisualizerBeatWaveBlueTextbox" Text="x*1 - 510" Grid.Row="5" Grid.Column="1" FontSize="10" Margin="3" Cursor="IBeam" Style="{DynamicResource StandartTextboxStyle}"/>
 
-                <Button x:Name="VisualizerBeatWaveUpdateButton" Click="VisualizerBeatWaveUpdateButton_Click" Content="Update Spectrum" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="2,2,2,2" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="8" BorderThickness="0" Style="{DynamicResource HoverStyleSideBar}"/>
+                <Button x:Name="VisualizerBeatWaveUpdateButton" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="Update Spectrum" Margin="2" FontSize="8" Style="{DynamicResource StandartSidebarButtonStyle}" Click="VisualizerBeatWaveUpdateButton_Click"/>
 
             </Grid>
 
-            <Grid x:Name="VisualizerFullSpectrumSettingsGrid" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="8" Background="#FF414449" Margin="3,3,5,3" Visibility="Hidden">
+            <Grid x:Name="VisualizerFullSpectrumSettingsGrid" Grid.Column="4" Grid.Row="0" Grid.RowSpan="8" Background="#FF414449" Margin="3" Visibility="Hidden">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25"/>
                     <RowDefinition Height="20"/>
@@ -440,17 +482,16 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label x:Name="VisualizerFullSpectrumTopLabel" FontSize="10" Content="Full Spectrum Settings" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Foreground="White" />
+                <Label x:Name="VisualizerFullSpectrumTopLabel" Grid.Row="0" Grid.Column="0" Content="Full Spectrum Settings" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
 
-                <Label x:Name="VisualizerFullSpectrumSectionsLabel" Grid.Row="1" Grid.Column="0" FontSize="8" Content="Sections pr Audio Sample" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Top" Foreground="White" />
-                <TextBox x:Name="VisualizerFullSpectrumSectionsTextbox" Text="5" Grid.Row="2" Grid.Column="0" FontSize="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="IBeam" TextChanged="SetTextBoxToOnlyNumbers" Style="{DynamicResource TextboxStyle}"/>
+                <Label x:Name="VisualizerFullSpectrumSectionsLabel" Grid.Row="1" Grid.Column="0" Content="Sections pr Audio Sample" FontSize="8" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="VisualizerFullSpectrumSectionsTextbox" Grid.Row="2" Grid.Column="0" Text="5"  FontSize="10" Margin="2" HorizontalContentAlignment="Center" Cursor="IBeam" TextChanged="SetTextBoxToOnlyNumbers" Style="{DynamicResource StandartTextboxStyle}"/>
             </Grid>
 
-            <Grid x:Name="VisualizerBeatZoneGrid" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="7" Background="#FF414449" Margin="5,5,5,5">
+            <Grid x:Name="VisualizerBeatZoneGrid" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="5" Background="#FF414449" Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="30"/>
@@ -471,31 +512,31 @@
                     <ColumnDefinition Width="30"/>
                 </Grid.ColumnDefinitions>
 
-                <Border Grid.Row="1" Grid.Column="3" Grid.RowSpan="5" Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="#FF1B212E" Margin="1,1,1,1"/>
+                <Border Grid.Row="1" Grid.Column="3" Grid.RowSpan="5" Grid.ColumnSpan="2" BorderThickness="1" BorderBrush="#FF1B212E" Margin="1"/>
 
-                <Label x:Name="VisualizerBeatZoneLabel" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" Content="Beat Zone" FontSize="15" HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"/>
-                <Canvas x:Name="VisualizerBeatZoneCanvas" Grid.Row="1" Grid.Column="3" Grid.RowSpan="5" Grid.ColumnSpan="2" Background="#FF666262" Margin="2,2,2,2" Width="488" Height="146"/>
-                <CheckBox x:Name="VisualizerBeatZoneAutoTriggerCheckBox" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Click="VisualizerBeatZoneAutoTriggerCheckBox_Click" Content="Enable AutoTrigger" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" IsChecked="True" Uid="Setting"/>
-                <Slider x:Name="VisualizerBeatZoneAutoTriggerSlider" Grid.Row="1" Grid.Column="2" Grid.RowSpan="5" Margin="2,2,2,2" ValueChanged="VisualizerBeatZoneAutoTriggerSlider_ValueChanged" Orientation="Vertical" TickPlacement="BottomRight" Maximum="255" LargeChange="10" SmallChange="1" TickFrequency="10" Minimum="1" Uid="Setting"/>
-                <Label x:Name="VisualizerBeatZoneAutoTriggerMaxLabel" Grid.Row="1" Grid.Column="1" Content="Max" FontSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Foreground="White"/>
-                <TextBox x:Name="VisualizerBeatZoneAutoTriggerMaxTextBox" Text="255" Grid.Row="2" Grid.Column="1" FontSize="10" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="IBeam" TextChanged="SetTextBoxToOnlyNumbers" Uid="Setting" Style="{DynamicResource TextboxStyle}"/>
-                <Label x:Name="VisualizerBeatZoneAutoTriggerMinLabel" Grid.Row="4" Grid.Column="1" Content="Min" FontSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Foreground="White"/>
-                <TextBox x:Name="VisualizerBeatZoneAutoTriggerMinTextBox" Text="10" Grid.Row="5" Grid.Column="1" FontSize="10" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="IBeam" TextChanged="SetTextBoxToOnlyNumbers" Uid="Setting" Style="{DynamicResource TextboxStyle}"/>
-                <Label x:Name="VisualizerBeatZoneAutoTriggerValueLabel" Grid.Row="3" Grid.Column="1" Content="0" FontSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
-                <Label x:Name="VisualizerBeatZoneFromValueLabel" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Content="From Value" FontSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
-                <Slider x:Name="VisualizerBeatZoneFromValueSlider" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="2" Margin="0,1,0,0" ValueChanged="VisualizerBeatZoneFromValueSlider_ValueChanged" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SmallChange="1" TickPlacement="BottomRight" LargeChange="5" Maximum="128" TickFrequency="5" Uid="Setting" />
-                <Label x:Name="VisualizerBeatZoneFromValueSliderValueLabel" Grid.Row="6" Grid.Column="5" Content="0" FontSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
-                <Label x:Name="VisualizerBeatZoneToValueLabel" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Content="To Value" FontSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
-                <Slider x:Name="VisualizerBeatZoneToValueSlider" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="2" Margin="0,0,0,1" ValueChanged="VisualizerBeatZoneToValueSlider_ValueChanged" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SmallChange="1" Value="128" LargeChange="5" Maximum="128" TickFrequency="5" TickPlacement="TopLeft" Uid="Setting" />
-                <Label x:Name="VisualizerBeatZoneToValueSliderValueLabel" Grid.Row="7" Grid.Column="5" Content="128" FontSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
+                <Label x:Name="VisualizerBeatZoneLabel" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" Content="Beat Zone" FontSize="15" Style="{StaticResource StandartLabelStyle}"/>
+                <Canvas x:Name="VisualizerBeatZoneCanvas" Grid.Row="1" Grid.Column="3" Grid.RowSpan="5" Grid.ColumnSpan="2" Background="#FF666262" Margin="2" Width="486" Height="146"/>
+                <CheckBox x:Name="VisualizerBeatZoneAutoTriggerCheckBox" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Content="Enable AutoTrigger" FontSize="8" IsChecked="True" Uid="AdvancedSetting" Style="{StaticResource StandartCheckboxStyle}" Click="VisualizerBeatZoneAutoTriggerCheckBox_Click"/>
+                <Slider x:Name="VisualizerBeatZoneAutoTriggerSlider" Grid.Row="1" Grid.Column="2" Grid.RowSpan="5" Margin="2" Orientation="Vertical" TickPlacement="BottomRight" Maximum="255" LargeChange="10" SmallChange="1" TickFrequency="10" Minimum="1" Uid="AdvancedSetting" ValueChanged="VisualizerBeatZoneAutoTriggerSlider_ValueChanged"/>
+                <Label x:Name="VisualizerBeatZoneAutoTriggerMaxLabel" Grid.Row="1" Grid.Column="1" Content="Max" FontSize="10" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="VisualizerBeatZoneAutoTriggerMaxTextBox" Grid.Row="2" Grid.Column="1" Text="255" FontSize="10" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+                <Label x:Name="VisualizerBeatZoneAutoTriggerMinLabel" Grid.Row="4" Grid.Column="1" Content="Min" FontSize="10" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="VisualizerBeatZoneAutoTriggerMinTextBox" Grid.Row="5" Grid.Column="1" Text="10" FontSize="10" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+                <Label x:Name="VisualizerBeatZoneAutoTriggerValueLabel" Grid.Row="3" Grid.Column="1" Content="0" FontSize="10" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+                <Label x:Name="VisualizerBeatZoneFromValueLabel" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Content="From Value" FontSize="8" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+                <Slider x:Name="VisualizerBeatZoneFromValueSlider" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="2" Margin="0,1,0,0" SmallChange="1" TickPlacement="BottomRight" LargeChange="5" Maximum="128" TickFrequency="5" Uid="AdvancedSetting" ValueChanged="VisualizerBeatZoneFromValueSlider_ValueChanged"/>
+                <Label x:Name="VisualizerBeatZoneFromValueSliderValueLabel" Grid.Row="6" Grid.Column="5" Content="0" FontSize="10" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+                <Label x:Name="VisualizerBeatZoneToValueLabel" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Content="To Value" FontSize="8" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
+                <Slider x:Name="VisualizerBeatZoneToValueSlider" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="2" Margin="0,0,0,1" SmallChange="1" Value="128" LargeChange="5" Maximum="128" TickFrequency="5" TickPlacement="TopLeft" Uid="AdvancedSetting" ValueChanged="VisualizerBeatZoneToValueSlider_ValueChanged"/>
+                <Label x:Name="VisualizerBeatZoneToValueSliderValueLabel" Grid.Row="7" Grid.Column="5" Content="128" FontSize="10" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
 
-                <Label x:Name="VisualizerBeatZoneRPSLabel" Grid.Row="0" Grid.Column="5" Content="RPS:" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
-                <Label x:Name="VisualizerBeatZoneRPSHighestLabel" Grid.Row="1" Grid.Column="5" Content="Top:" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
-                <Label x:Name="VisualizerBeatZoneRPSLowestLabel" Grid.Row="2" Grid.Column="5" Content="Low:" FontSize="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
-                <Button x:Name="VisualizerBeatZoneRPSResetButton" Click="VisualizerBeatZoneRPSResetButton_Click" Content="RST" Grid.Row="3" Grid.Column="5" Margin="2,2,2,2" HorizontalAlignment="Stretch" FontSize="8" BorderThickness="0" Style="{DynamicResource HoverStyleSideBarCenterText}"/>
+                <Label x:Name="VisualizerBeatZoneRPSLabel" Grid.Row="0" Grid.Column="5" Content="RPS:" FontSize="8" Style="{StaticResource StandartLabelStyle}"/>
+                <Label x:Name="VisualizerBeatZoneRPSHighestLabel" Grid.Row="1" Grid.Column="5" Content="Top:" FontSize="8" Style="{StaticResource StandartLabelStyle}"/>
+                <Label x:Name="VisualizerBeatZoneRPSLowestLabel" Grid.Row="2" Grid.Column="5" Content="Low:" FontSize="8" Style="{StaticResource StandartLabelStyle}"/>
+                <Button x:Name="VisualizerBeatZoneRPSResetButton" Grid.Row="3" Grid.Column="5" Content="RST" Margin="2" FontSize="8" Style="{DynamicResource StandartSidebarButtonStyleCenterText}" Click="VisualizerBeatZoneRPSResetButton_Click"/>
 
-                <TextBox x:Name="VisualizerBeatZoneAutoTriggerIncresseTextBox" Text="500" Grid.Row="1" Grid.Column="0" FontSize="10" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="IBeam" TextChanged="SetTextBoxToOnlyNumbers" Uid="Setting" Style="{DynamicResource TextboxStyle}"/>
-                <Label x:Name="VisualizerBeatZoneAutoTriggerIncresseLabel" Grid.Row="2" Grid.Column="0" Content="v" FontSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" RenderTransformOrigin="0.5,0.5">
+                <TextBox x:Name="VisualizerBeatZoneAutoTriggerIncresseTextBox" Grid.Row="1" Grid.Column="0" Text="500" FontSize="10" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+                <Label x:Name="VisualizerBeatZoneAutoTriggerIncresseLabel" Grid.Row="2" Grid.Column="0" Content="v" FontSize="10" RenderTransformOrigin="0.5,0.5" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}">
                     <Label.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -505,7 +546,7 @@
                         </TransformGroup>
                     </Label.RenderTransform>
                 </Label>
-                <Label x:Name="VisualizerBeatZoneAutoTriggerDecreeseLabel" Grid.Row="4" Grid.Column="0" Content="v" FontSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" RenderTransformOrigin="0.5,0.5">
+                <Label x:Name="VisualizerBeatZoneAutoTriggerDecreeseLabel" Grid.Row="4" Grid.Column="0" Content="v" FontSize="10" RenderTransformOrigin="0.5,0.5" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}">
                     <Label.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -515,8 +556,8 @@
                         </TransformGroup>
                     </Label.RenderTransform>
                 </Label>
-                <TextBox x:Name="VisualizerBeatZoneAutoTriggerDecreeseTextBox" Text="50" Grid.Row="5" Grid.Column="0" FontSize="10" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="IBeam" TextChanged="SetTextBoxToOnlyNumbers" Uid="Setting" Style="{DynamicResource TextboxStyle}"/>
-                <Label x:Name="VisualizerBeatZoneCurrentValueLabel" Grid.Row="3" Grid.Column="0" Content="0" FontSize="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
+                <TextBox x:Name="VisualizerBeatZoneAutoTriggerDecreeseTextBox" Grid.Row="5" Grid.Column="0" Text="50" FontSize="10" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+                <Label x:Name="VisualizerBeatZoneCurrentValueLabel" Grid.Row="3" Grid.Column="0" Content="0" FontSize="10" Uid="VisualAdvancedSetting" Style="{StaticResource StandartLabelStyle}"/>
 
             </Grid>
 
@@ -556,17 +597,244 @@
             </Button>
         </Grid>
 
-        <Grid x:Name="AmbilightGrid" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Background="#FF36393F">
+        <Grid x:Name="AmbilightGrid" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Background="#FF36393F" d:IsHidden="False">
             <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="120"/>
                 <RowDefinition Height="150"/>
                 <RowDefinition Height="150"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="300"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+
+            <Button x:Name="AmbilightStartAmbilightButton" Content="Start Ambilight" Margin="2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyleCenterText}" Click="AmbilightStartAmbilightButton_Click"/>
+            <Button x:Name="AmbilightStopAmbilightButton" Grid.Column="1" Content="Stop Ambilight" Margin="2" FontSize="12" Style="{DynamicResource StandartSidebarButtonStyleCenterText}" Click="AmbilightStopAmbilightButton_Click"/>
+
+            <CheckBox x:Name="AmbilightSelectTopSideCheckbox" Grid.Row="1" Grid.Column="0" Content="Select Top Side of Monitor" FontSize="12" IsChecked="False" Style="{StaticResource StandartCheckboxStyle}" Checked="AmbilightSelectTopSideCheckbox_Checked" Unchecked="AmbilightSelectTopSideCheckbox_Unchecked"/>
+            <CheckBox x:Name="AmbilightSelectRightSideCheckbox" Grid.Row="1" Grid.Column="1" Content="Select Right Side of Monitor" FontSize="12" IsChecked="False" Style="{StaticResource StandartCheckboxStyle}" Checked="AmbilightSelectRightSideCheckbox_Checked" Unchecked="AmbilightSelectRightSideCheckbox_Unchecked"/>
+            <CheckBox x:Name="AmbilightSelectBottomSideCheckbox" Grid.Row="2" Grid.Column="1" Content="Select Bottom Side of Monitor" FontSize="12" IsChecked="False" Style="{StaticResource StandartCheckboxStyle}" Checked="AmbilightSelectBottomSideCheckbox_Checked" Unchecked="AmbilightSelectBottomSideCheckbox_Unchecked"/>
+            <CheckBox x:Name="AmbilightSelectLeftSideCheckbox" Grid.Row="2" Grid.Column="0" Content="Select Left Side of Monitor" FontSize="12" IsChecked="False" Style="{StaticResource StandartCheckboxStyle}" Checked="AmbilightSelectLeftSideCheckbox_Checked" Unchecked="AmbilightSelectLeftSideCheckbox_Unchecked"/>
+
+            <Grid x:Name="AmbilightAdvancedSettingsGrid" Grid.Row="3" Grid.ColumnSpan="2" Background="#FF414449" Margin="5" Uid="VisualAdvancedSetting">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="145"/>
+                    <ColumnDefinition Width="145"/>
+                    <ColumnDefinition Width="145"/>
+                    <ColumnDefinition Width="145"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="AmbilightMaximumFPSLabel" Grid.Row="0" Grid.Column="0" Content="Maximum FPS" FontSize="12" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightMaximumFPSTextbox" Grid.Row="1" Grid.Column="0" Text="30" FontSize="10" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightBlockSampleSplitLabel" Grid.Row="0" Grid.Column="1" Content="Block Sample Split" FontSize="12" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightBlockSampleSplitTextbox" Grid.Row="1" Grid.Column="1" Text="25" FontSize="10" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightGammaFactorLabel" Grid.Row="0" Grid.Column="2" Content="Gamma Factor" FontSize="12" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightGammaFactorTextbox" Grid.Row="1" Grid.Column="2" Text="2,0" FontSize="10" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightFadeFactorLabel" Grid.Row="0" Grid.Column="3" Content="Fade Factor" FontSize="12" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightFadeFactorTextbox" Grid.Row="1" Grid.Column="3" Text="0,25" FontSize="10" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightAssumePrCentLabel" Grid.Row="2" Grid.Column="2" Content="Assume %" FontSize="12" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightAssumePrCentTextBox" Grid.Row="3" Grid.Column="2" Text="50" FontSize="10" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightMaxAssumeVariationLabel" Grid.Row="2" Grid.Column="3" Content="Max Assume Variation" FontSize="11" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightMaxAssumeVariationTextBox" Grid.Row="3" Grid.Column="3" Text="100" FontSize="10" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+                
+                <Label x:Name="AmbilightScreenIDLabel" Grid.Row="4" Grid.Column="2" Content="Screen ID:" FontSize="12" Style="{StaticResource StandartLabelStyle}"/>
+                <ComboBox x:Name="AmbilightScreenIDCombobox" Grid.Row="4" Grid.Column="3" Margin="3" FontSize="12" SelectedIndex="0" Uid="AdvancedSetting" Style="{DynamicResource StandartComboboxStyle}" DropDownOpened="AmbilightScreenIDCombobox_DropDownOpened" />
+
+                <Button x:Name="AmbilightAutosetOffsetsButton" Grid.Column="0" Grid.Row="3" Content="Autoset Offsets" Margin="2" FontSize="10" Style="{DynamicResource StandartSidebarButtonStyleCenterText}" Click="AmbilightAutosetOffsetsButton_Click"/>
+                <Button x:Name="AmbilightAutosetBlockSizes" Grid.Column="1" Grid.Row="3" Content="Autoset Block sizes" Margin="2" FontSize="10" Style="{DynamicResource StandartSidebarButtonStyleCenterText}" Click="AmbilightAutosetBlockSizes_Click"/>
+                <Button x:Name="AmbilightShowHideBlocks" Grid.Column="0" Grid.Row="2" Content="Show/Hide Blocks" Margin="2" FontSize="10" Style="{DynamicResource StandartSidebarButtonStyleCenterText}" Click="AmbilightShowHideBlocks_Click"/>
+                <Button x:Name="AmbilightSaveSettingsButton" Grid.Column="0" Grid.Row="4" Content="Save Setting" Margin="2" FontSize="10" Style="{DynamicResource StandartSidebarButtonStyleCenterText}" Click="AmbilightSaveSettingsButton_Click"/>
+                <Button x:Name="AmbilightLoadSettingsButton" Grid.Column="1" Grid.Row="4" Content="Load Settings" Margin="2" FontSize="10" Style="{DynamicResource StandartSidebarButtonStyleCenterText}" Click="AmbilightLoadSettingsButton_Click"/>
+
+                <Label x:Name="AmbilightFPSLabel" Grid.Row="2" Grid.Column="1" Content="FPS: " FontSize="12" Style="{StaticResource StandartLabelStyle}"/>
+
+            </Grid>
+
+            <Grid x:Name="AmbilightTopSideGrid" Grid.Column="0" Grid.Row="4" Background="#FF414449" Margin="5" Uid="VisualAdvancedSetting">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="145"/>
+                    <ColumnDefinition Width="145"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="AmbilightTopSideLabel" Grid.ColumnSpan="2" Content="Top Side" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+
+                <Label x:Name="AmbilightTopSideLEDsPrBlockLabel" Grid.Row="1" Grid.Column="0" Content="LEDs Pr Block" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightTopSideLEDsPrBlockTextbox" Grid.Row="2" Text="1" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightTopSideBlockSpacingLabel" Grid.Row="1" Grid.Column="1" Content="Block Spacing" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightTopSideBlockSpacingTextbox" Grid.Row="2" Grid.Column="1" Text="10" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightTopSideBlockWidthLabel" Grid.Row="3" Grid.Column="0" Content="Block Width" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightTopSideBlockWidthTextbox" Grid.Row="4" Grid.Column="0" Text="100" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightTopSideBlockHeightLabel" Grid.Row="3" Grid.Column="1" Content="Block Height" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightTopSideBlockHeightTextbox" Grid.Row="4" Grid.Column="1" Text="100" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightTopSideBlockOffsetXLabel" Grid.Row="5" Grid.Column="0" Content="Block Offset X" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightTopSideBlockOffsetXTextbox" Grid.Row="6" Grid.Column="0" Text="0" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightTopSideBlockOffsetYLabel" Grid.Row="5" Grid.Column="1" Content="Block Offset Y" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightTopSideBlockOffsetYTextbox" Grid.Row="6" Grid.Column="1" Text="0" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+            </Grid>
+
+            <Grid x:Name="AmbilightRightSideGrid" Grid.Column="1" Grid.Row="4" Background="#FF414449" Margin="5" Uid="VisualAdvancedSetting">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="145"/>
+                    <ColumnDefinition Width="145"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="AmbilightRightSideLabel" Grid.ColumnSpan="2" Content="Right Side" FontSize="12" Style="{StaticResource StandartLabelStyle}"/>
+
+                <Label x:Name="AmbilightRightSideLEDsPrBlockLabel" Grid.Row="1" Grid.Column="0" Content="LEDs Pr Block" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightRightSideLEDsPrBlockTextbox" Grid.Row="2" Text="1" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightRightSideBlockSpacingLabel" Grid.Row="1" Grid.Column="1" Content="Block Spacing" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightRightSideBlockSpacingTextbox" Grid.Row="2" Grid.Column="1" Text="10" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightRightSideBlockWidthLabel" Grid.Row="3" Grid.Column="0" Content="Block Width" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightRightSideBlockWidthTextbox" Grid.Row="4" Grid.Column="0" Text="100" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightRightSideBlockHeightLabel" Grid.Row="3" Grid.Column="1" Content="Block Height" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightRightSideBlockHeightTextbox" Grid.Row="4" Grid.Column="1" Text="100" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightRightSideBlockOffsetXLabel" Grid.Row="5" Grid.Column="0" Content="Block Offset X" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightRightSideBlockOffsetXTextbox" Grid.Row="6" Grid.Column="0" Text="0" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightRightSideBlockOffsetYLabel" Grid.Row="5" Grid.Column="1" Content="Block Offset Y" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightRightSideBlockOffsetYTextbox" Grid.Row="6" Grid.Column="1" Text="0" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+            </Grid>
+
+            <Grid x:Name="AmbilightBottomSideGrid" Grid.Column="1" Grid.Row="5" Background="#FF414449" Margin="5" Uid="VisualAdvancedSetting">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="145"/>
+                    <ColumnDefinition Width="145"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="AmbilightBottomSideLabel" Grid.ColumnSpan="2" Content="Bottom Side" FontSize="12" Style="{StaticResource StandartLabelStyle}"/>
+
+                <Label x:Name="AmbilightBottomSideLEDsPrBlockLabel" Grid.Row="1" Grid.Column="0" Content="LEDs Pr Block" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightBottomSideLEDsPrBlockTextbox" Grid.Row="2" Text="1" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightBottomSideBlockSpacingLabel" Grid.Row="1" Grid.Column="1" Content="Block Spacing" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightBottomSideBlockSpacingTextbox" Grid.Row="2" Grid.Column="1" Text="10" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightBottomSideBlockWidthLabel" Grid.Row="3" Grid.Column="0" Content="Block Width" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightBottomSideBlockWidthTextbox" Grid.Row="4" Grid.Column="0" Text="100" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightBottomSideBlockHeightLabel" Grid.Row="3" Grid.Column="1" Content="Block Height" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightBottomSideBlockHeightTextbox" Grid.Row="4" Grid.Column="1" Text="100" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightBottomSideBlockOffsetXLabel" Grid.Row="5" Grid.Column="0" Content="Block Offset X" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightBottomSideBlockOffsetXTextbox" Grid.Row="6" Grid.Column="0" Text="0" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightBottomSideBlockOffsetYLabel" Grid.Row="5" Grid.Column="1" Content="Block Offset Y" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightBottomSideBlockOffsetYTextbox" Grid.Row="6" Grid.Column="1" Text="0" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+            </Grid>
+
+            <Grid x:Name="AmbilightLeftSideGrid" Grid.Column="0" Grid.Row="5" Background="#FF414449" Margin="5" Uid="VisualAdvancedSetting">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="145"/>
+                    <ColumnDefinition Width="145"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="AmbilightLeftSideLabel" Grid.ColumnSpan="2" Content="Left Side" FontSize="12" Style="{StaticResource StandartLabelStyle}"/>
+
+                <Label x:Name="AmbilightLeftSideLEDsPrBlockLabel" Grid.Row="1" Grid.Column="0" Content="LEDs Pr Block" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightLeftSideLEDsPrBlockTextbox" Grid.Row="2" Text="1" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightLeftSideBlockSpacingLabel" Grid.Row="1" Grid.Column="1" Content="Block Spacing" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightLeftSideBlockSpacingTextbox" Grid.Row="2" Grid.Column="1" Text="10" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightLeftSideBlockWidthLabel" Grid.Row="3" Grid.Column="0" Content="Block Width" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightLeftSideBlockWidthTextbox" Grid.Row="4" Grid.Column="0" Text="100" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightLeftSideBlockHeightLabel" Grid.Row="3" Grid.Column="1" Content="Block Height" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightLeftSideBlockHeightTextbox" Grid.Row="4" Grid.Column="1" Text="100" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightLeftSideBlockOffsetXLabel" Grid.Row="5" Grid.Column="0" Content="Block Offset X" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightLeftSideBlockOffsetXTextbox" Grid.Row="6" Grid.Column="0" Text="0" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+                <Label x:Name="AmbilightLeftSideBlockOffsetYLabel" Grid.Row="5" Grid.Column="1" Content="Block Offset Y" FontSize="10" Style="{StaticResource StandartLabelStyle}"/>
+                <TextBox x:Name="AmbilightLeftSideBlockOffsetYTextbox" Grid.Row="6" Grid.Column="1" Text="0" FontSize="8" Margin="2" Cursor="IBeam" Uid="AdvancedSetting" Style="{DynamicResource StandartTextboxStyleCenterText}" TextChanged="SetTextBoxToOnlyNumbers"/>
+
+            </Grid>
+
+        </Grid>
+
+        <Grid x:Name="AmbilightSelectSideGrid" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Background="#FF36393F" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="AmbilightSelectSideGridInnerGrid" Grid.ColumnSpan="2" Background="LightGray" Margin="10"/>
+            <Button x:Name="AmbilightSelectSideGridOKButton" Grid.Row="1" Content="OK" Margin="2" Style="{StaticResource StandartSidebarButtonStyleCenterText}" Click="AmbilightSelectSideGridOKButton_Click"/>
+            <Button x:Name="AmbilightSelectSideGridCancelButton" Grid.Column="1" Grid.Row="1" Content="Cancel" Margin="2" Style="{StaticResource StandartSidebarButtonStyleCenterText}" Click="AmbilightSelectSideGridCancelButton_Click"/>
         </Grid>
 
         <Grid x:Name="SetupSubMenu" Grid.Column="2" Grid.Row="2" Background="#FF36393F" d:IsHidden="True">
@@ -587,14 +855,15 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Label x:Name="SetupAddStripLEDsOnStripLabel" Content="LEDs on Strip" Grid.Row="0" FontSize="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
-            <TextBox x:Name="SetupAddStripLEDsOnStripTextBox" Text="0" Grid.Row="1" FontSize="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="IBeam" TextChanged="SetTextBoxToOnlyNumbers" Style="{DynamicResource TextboxStyle}"/>
-            <Label x:Name="SetupAddStripFromIDLabel" Content="From ID" Grid.Row="2" FontSize="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
-            <TextBox x:Name="SetupAddStripFromIDTextBox" Text="0" Grid.Row="3" FontSize="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="IBeam" TextChanged="SetTextBoxToOnlyNumbers" Style="{DynamicResource TextboxStyle}"/>
-            <Label x:Name="SetupAddStripPinIDLabel" Content="Pin ID" Grid.Row="4" FontSize="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
-            <TextBox x:Name="SetupAddStripPinIDTextBox" Text="0" Grid.Row="5" FontSize="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="IBeam" TextChanged="SetTextBoxToOnlyNumbers" Style="{DynamicResource TextboxStyle}"/>
-            <Button x:Name="SetupAddStripAddStripButton" Content="Add Strip" Grid.Row="6" FontSize="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="SetupAddStripAddStripButton_Click" Style="{DynamicResource HoverStyleSideBarCenterText}"/>
+            <Label x:Name="SetupAddStripLEDsOnStripLabel" Grid.Row="0" Content="LEDs on Strip" FontSize="10" Margin="2" Style="{StaticResource StandartLabelStyle}"/>
+            <TextBox x:Name="SetupAddStripLEDsOnStripTextBox" Grid.Row="1" Text="0" FontSize="10" Margin="2" Cursor="IBeam" Style="{DynamicResource StandartTextboxStyle}" TextChanged="SetTextBoxToOnlyNumbers"/>
+            <Label x:Name="SetupAddStripFromIDLabel" Grid.Row="2" Content="From ID" FontSize="10" Margin="2" Style="{StaticResource StandartLabelStyle}"/>
+            <TextBox x:Name="SetupAddStripFromIDTextBox" Grid.Row="3" Text="0" FontSize="10" Margin="2" Cursor="IBeam" Style="{DynamicResource StandartTextboxStyle}" TextChanged="SetTextBoxToOnlyNumbers"/>
+            <Label x:Name="SetupAddStripPinIDLabel" Grid.Row="4" Content="Pin ID" FontSize="10"  Margin="2" Style="{StaticResource StandartLabelStyle}"/>
+            <TextBox x:Name="SetupAddStripPinIDTextBox" Grid.Row="5" Text="0" FontSize="10" Margin="2" Cursor="IBeam" Style="{DynamicResource StandartTextboxStyle}" TextChanged="SetTextBoxToOnlyNumbers"/>
+            <Button x:Name="SetupAddStripAddStripButton" Grid.Row="6" Content="Add Strip" FontSize="10" Margin="2" Style="{DynamicResource StandartSidebarButtonStyleCenterText}" Click="SetupAddStripAddStripButton_Click"/>
         </Grid>
+
         <Grid x:Name="SettingsStartupGrid" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Background="#FF36393F" d:IsHidden="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
@@ -608,9 +877,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <CheckBox x:Name="SettingsStartupAutoConnectAtStartupCheckbox" Grid.Row="0" Grid.Column="0" Content="Auto Connect to devices at startup?" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Uid="GeneralSetting"/>
-            <CheckBox x:Name="SettingsStartupAutoSendSetupsAtStartupCheckbox" Grid.Row="1" Grid.Column="0" Content="Auto send setups to devices at startup?" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Uid="GeneralSetting"/>
-
+            <CheckBox x:Name="SettingsStartupAutoConnectAtStartupCheckbox" Grid.Row="0" Content="Auto Connect to devices at startup?" Uid="GeneralSetting" Style="{StaticResource StandartCheckboxStyle}"/>
+            <CheckBox x:Name="SettingsStartupAutoSendSetupsAtStartupCheckbox" Grid.Row="1" Content="Auto send setups to devices at startup?" Uid="GeneralSetting" Style="{StaticResource StandartCheckboxStyle}"/>
+            <CheckBox x:Name="SettingsAdvancedSettingsCheckBox" Grid.Row="2" Content="Show Advanced Settings?" IsChecked="True" Uid="GeneralSetting" Style="{StaticResource StandartCheckboxStyle}" Checked="SettingsAdvancedSettingsCheckBox_Checked" Unchecked="SettingsAdvancedSettingsCheckBox_Unchecked"/>
 
         </Grid>
     </Grid>
