@@ -1,16 +1,13 @@
 Source Code/ArduLED 2.0/ArduLED/bin/64x/cfg.txt
 Source Code/ArduLED 2.0/ArduLED/bin/64x/Setups
-Source Code/ArduLED 2.0/ArduLED/bin/64x/Instructions
-Source Code/ArduLED 2.0/ArduLED/bin/64x/VisualizerSettings
-Source Code/ArduLED 2.0/ArduLED/bin/64x/AmbilightSettings
-Source Code/ArduLED 2.0/ArduLED/bin/64x/Animations
+Source Code/ArduLED 2.0/ArduLED/bin/64x/ManualSaves
+Source Code/ArduLED 2.0/ArduLED/bin/64x/Ranges
+Source Code/ArduLED 2.0/ArduLED/bin/64x/DeviceConfigs
 
-Source Code/ArduLED 2.0/ArduLED/bin/Release 64x/cfg.txt
 Source Code/ArduLED 2.0/ArduLED/bin/Release 64x/Setups
-Source Code/ArduLED 2.0/ArduLED/bin/Release 64x/Instructions
-Source Code/ArduLED 2.0/ArduLED/bin/Release 64x/VisualizerSettings
-Source Code/ArduLED 2.0/ArduLED/bin/Release 64x/AmbilightSettings
-Source Code/ArduLED 2.0/ArduLED/bin/Release 64x/Animations
+Source Code/ArduLED 2.0/ArduLED/bin/Release 64x/ManualSaves
+Source Code/ArduLED 2.0/ArduLED/bin/Release 64x/Ranges
+Source Code/ArduLED 2.0/ArduLED/bin/Release 64x/DeviceConfigs
 
 Source Code/ArduLED 2.0/.vs
 Source Code/ArduLED 2.0/ArduLED/obj
