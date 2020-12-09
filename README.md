@@ -1,3 +1,5 @@
+### This project is now closed!
+
 # Welcome to ArduLED 2.0
 
 **DISCLAIMER: THIS IS CURRENTLY IN DEVELOPMENT, THIS MEANS THAT IT IS NOT NEARLY AS FUNCTIONAL AS [**ARDULED 1.0**](https://github.com/kris701/ArduLED)**
